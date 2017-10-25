@@ -22,4 +22,21 @@ class Solution(object):
                 root = stack.pop()
                 root = root.right 
         return preorder_result
+    
+class Solution(object):
+    def preorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        preorder_result = []
+        stack = []
+        while root or stack:
+            while root:
+                preorder_result.append(root.val)
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            root = root.right 
+        return preorder_result
                 
